@@ -12,13 +12,17 @@ header {
         height: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         font-weight: bold;
+        position: relative;
+
         .nav-logo {
             font-size: 2em;
         }
         .nav-menu {
             display: flex;
             gap: 3rem;
+
             .nav-links {
                 display: flex;
                 justify-content: space-between;
@@ -30,14 +34,23 @@ header {
                 color: #fff;
                 border-radius: 10px;
                 transition: background-color 0.2s ease-in-out;
-                height: 50%;
-                padding: 0 1rem;
+                padding: 1rem;
                 margin: auto;
                 &:hover {
                     background-color: black;
                 }
             }
         }
+        .nav-btn-menu {
+            display: none;
+            width: 4rem;
+            height: 3rem;
+            background-color: #222222;
+            border-radius: 20px;
+            color: white;
+            font-size: 2.5em;
+        }
+
     }
 }
 
@@ -199,4 +212,39 @@ footer {
     text-align: center;
     padding: 1.5rem;
     margin-top: 7rem;
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 80%;
+    }
+    .nav-menu {
+        display: none !important;
+    }
+    .nav-btn-menu {
+        display: block !important;
+    }
+    .sidebar-open {
+        display: block !important;
+        background-color: rgba(51, 51, 51, 0.92) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 100vh;
+        padding-top: 10rem;
+        transition: left 0.3s ease-in-out;
+    }
+    .sidebar-open .nav-links {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        color: white;
+        font-size: 2em;
+    }
+}
+@media (max-width: 425px) {
+    html {
+        font-size: 60%;
+    }
 }
